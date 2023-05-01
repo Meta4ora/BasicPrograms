@@ -1,0 +1,341 @@
+#include <iostream>
+#include <ctime>
+#include <math.h>
+#include <stdio.h>
+#include <locale.h>
+
+using namespace std;
+int Z_1(int* ar, int n)
+{
+	int otric = 0;
+	printf("Ôóíêöèÿ âûçâàíà Z_1 \n");
+
+
+	for (int j = 0; j < n; j++)
+	{
+		if (ar[j] < 0)
+		{
+			otric = otric + 1;
+		}
+	}
+	printf("%d", otric);
+	return 0;
+}
+int Z_2(int* ar, int n)
+{
+	int otric = 0;
+	for (int j = 0; j < n; j++)
+	{
+		if (ar[j] > 0)
+		{
+			otric = otric + pow(ar[j], 2);
+		}
+
+	}
+	printf("%d", otric);
+	return 0;
+}
+int Z_3(int* ar, int n)
+{
+	int otric = 0;
+	for (int j = 0; j < n; j++)
+	{
+		if (ar[j] < 0)
+		{
+			otric = otric + pow(ar[j], 2);
+		}
+	}
+	printf("%d", otric);
+	return 0;
+}
+int Z_4(int* ar, int n)
+{
+	for (int j = 0; j < n; j++)
+	{
+		ar[j] = pow(ar[j], 2);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d \n", ar[i]);
+	}
+	return 0;
+}
+int Z_5(int* ar, int n)
+{
+	int otric = 0;
+	for (int j = 0; j < n; j++)
+	{
+		otric = otric + ar[j];
+	}
+	otric = otric / 5;
+	for (int j = 0; j < n; j++)
+	{
+		ar[j] = ar[j] - otric;
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d \n", ar[i]);
+	}
+	return 0;
+}
+int Z_6(int* ar, int n)
+{
+	int otric = 0;
+	for (int j = 0; j < n; j++)
+	{
+
+		otric = otric + ar[j];
+		ar[j] = otric;
+	}
+	ar[0] = 0;
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d \n", ar[i]);
+	}
+	return 0;
+}
+int Z_7()
+{
+	int const N = 5;
+	int ar1[5][N];
+	int otric = 0;
+	printf("Äâóìåðíûé ìàññèâ:");
+	for (int i = 0; i < N; i++)
+	{
+		ar1[0][i] = (rand() % 201) - 100;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			ar1[j][i] = (rand() % 201) - 100;
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d; ", ar1[j][i]);
+		}
+	}
+	for (int i = 0; i <= N; i++)
+	{
+		for (int j = 0; j <= N; j++)
+		{
+
+			if (i = j)
+			{
+				otric = pow(ar1[j - 1][i - 1], 2) + otric;
+			}
+		}
+	}
+
+	printf("\n%d ", otric);
+	return 0;
+}
+int Z_8()
+{
+	int const N = 5;
+	int ar1[5][N];
+	int otric = 0;
+	int Max = 0;
+	int ar[5];
+	printf("Äâóìåðíûé ìàññèâ:");
+	for (int i = 0; i < N; i++)
+	{
+		ar1[0][i] = (rand() % 201) - 100;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			ar1[j][i] = (rand() % 201) - 100;
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d; ", ar1[j][i]);
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			otric = otric + ar1[j][i];
+		}
+		ar[i] = otric;
+		printf("\n%d; ", ar[i]);
+		otric = 0;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		if (Max < ar[i])
+			Max = ar[i];
+	}
+	printf("\nÍàèáîëüøàÿ ñóììà \n%d ", Max);
+	return 0;
+}
+int Z_9()
+{
+	int const N = 5;
+	int ar1[5][N];
+	int otric = 0;
+	int Max = 0;
+	int ar[5];
+	printf("Äâóìåðíûé ìàññèâ:");
+	for (int i = 0; i < N; i++)
+	{
+		ar1[0][i] = (rand() % 201) - 100;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			ar1[j][i] = (rand() % 201) - 100;
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d; ", ar1[j][i]);
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			otric = otric + ar1[j][i];
+		}
+		ar[i] = otric;
+		printf("\n%d; ", ar[i]);
+		otric = 0;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		if (Max > ar[i])
+			Max = ar[i];
+	}
+	printf("\nÍàèìåíüøåå ñóììà \n%d ", Max);
+	return 0;
+}
+int Z_10()
+{
+	int const N = 5;
+	int ar1[5][N];
+	int otric = 0;
+	int Max = 0;
+	int ar[5];
+	printf("Äâóìåðíûé ìàññèâ:");
+	for (int i = 0; i < N; i++)
+	{
+		ar1[0][i] = (rand() % 201) - 100;
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			ar1[j][i] = (rand() % 201) - 100;
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d; ", ar1[j][i]);
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			if (ar1[j][i] % 2 == 0)
+			{
+				ar1[j][i] = 0;
+			}
+		}
+	}
+	printf("\n");
+	printf("\n");
+	for (int i = 0; i < N; i++)
+	{
+		printf("\n");
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d; ", ar1[j][i]);
+		}
+	}
+	return
+		0;
+}
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	system("chcp 1251");
+	int const N = 5;
+	int ar[N];
+
+	int otric = 0;
+	int c = 0;
+	printf("Îäíîìåðíûé ìàññèâ: \n");
+	for (int i = 0; i < N; i++)
+	{
+		ar[i] = (rand() % 201) - 100;
+		printf("%d \n", ar[i]);
+	}
+	printf("\nÔóíêöèè: \n");
+	printf("1.Ïîñ÷èòàòü êîëè÷åñòâî îòðèöàòåëüíûõ ýëåìåíòîâ îäíîìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë.\n" "2.Ïîñ÷èòàòü ñóììó êâàäðàòîâ ïîëîæèòåëüíûõ ýëåìåíòîâ îäíîìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë.\n""3.ïîñ÷èòàòü ñóììó êâàäðàòîâ îòðèöàòåëüíûõ ýëåìåíòîâ îäíîìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë. \n""4.Ïðåîáðàçîâàòü îäíîìåðíûé ìàññèâ âåùåñòâåííûõ ÷èñåë, ïðèñâîèâ êàæäîìó ýëåìåíòó êâàäðàò åãî çíà÷åíèÿ.\n""5.ïðåîáðàçîâàòü îäíîìåðíûé ìàññèâ âåùåñòâåííûõ ÷èñåë, óìåíüøèâ êàæäûé ýëåìåíò íà àáñîëþòíóþ âåëè÷èíó ñðåäíåãî çíà÷åíèÿ ýëåìåíòîâ ìàññèâà. \n""6.ïðåîáðàçîâàòü îäíîìåðíûé ìàññèâ âåùåñòâåííûõ ÷èñåë, çàíåñÿ â êàæäûé ýëåìåíò ñóììó âñåõ ïðåäûäóùèõ ýëåìåíòîâ (â ïåðâûé ýëåìåíò ïðè ýòîì íåîáõîäèìî ïîìåñòèòü çíà÷åíèå 0). \n""7.ïîñ÷èòàòü ñóììó êâàäðàòîâ äèàãîíàëüíûõ ýëåìåíòîâ äâóìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë. \n""8.ïîñ÷èòàòü ìàêñèìàëüíóþ ñóììó ýëåìåíòîâ â ñòðîêàõ äâóìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë. \n""9.ïîñ÷èòàòü ìèíèìàëüíóþ ñóììó ýëåìåíòîâ â ñòîëáöàõ äâóìåðíîãî ìàññèâà âåùåñòâåííûõ ÷èñåë. \n""10.ïðåîáðàçîâàòü äâóìåðíûé ìàññèâ âåùåñòâåííûõ ÷èñåë, çàíåñÿ çíà÷åíèå 0 âî âñå ýëåìåíòû ñ äâóìÿ ÷åòíûìè èíäåêñàìè. \n");
+	scanf_s("%d", &c);
+	printf("\n");
+	switch (c)
+	{
+	case 1:
+		Z_1(ar, N);
+		return 0;
+		break;
+	case 2:
+		Z_2(ar, N);
+		return 0;
+		break;
+	case 3:
+		Z_3(ar, N);
+		return 0;
+		break;
+	case 4:
+		Z_4(ar, N);
+		return 0;
+		break;
+	case 5:
+		Z_5(ar, N);
+		return 0;
+		break;
+	case 6:
+		Z_6(ar, N);
+		return 0;
+		break;
+	case 7:
+		Z_7();
+		break;
+	case 8:
+		Z_8();
+		break;
+	case 9:
+		Z_9();
+		break;
+	case 10:
+		Z_10();
+		break;
+
+	}
+
+}
